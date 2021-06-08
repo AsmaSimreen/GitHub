@@ -1,0 +1,15 @@
+.sideBar {
+  height: 100%;
+  width: 240px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f5f6f6;
+}
+
+.sideBar ul {
+  list-style: none;
+}
+.sideBar ul > li {
+  padding: 20px;
+}
