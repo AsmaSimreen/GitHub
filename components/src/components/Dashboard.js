@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Card from "./Card";
-import PropTypes from "prop-types";
 import "./css/Dashboard.css";
 import axios from "axios";
 import Loading from "../images/loading.gif";
