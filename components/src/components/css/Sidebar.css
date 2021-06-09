@@ -6,26 +6,29 @@
   left: 0;
   background-color: #f5f6f6;
 }
+
 .sideBar ul {
   list-style: none;
 }
 .sideBar ul > li {
-  padding: 20px;
-  margin :10px 10px;
+  padding: 10px;
+  margin: 10px 10px;
   background-color: white;
 }
-.sideBar ul > li:hover{
+.sideBar ul > li:hover {
   background-color: aliceblue;
   opacity: 0.5;
 }
-.sideBar li a{
+
+.sideBar li a {
   text-decoration: none;
 }
-@media screen and (max-width:768px){
-  .sideBar{
-    width : 60px;
+
+@media screen and (max-width: 768px) {
+  .sideBar {
+    width: 60px;
   }
-  .link_name{
-    display:none;
+  .link_name {
+    display: none;
   }
 }

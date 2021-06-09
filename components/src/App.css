@@ -9,6 +9,10 @@ body,
   padding: 0;
   box-sizing: border-box;
 }
+main {
+  width: 80%;
+  margin: 0 auto;
+}
 
 .mainLayout {
   height: 100%;
@@ -22,4 +26,10 @@ body,
 
 .mainLayout main {
   padding-left: 250px;
+}
+
+@media screen and (max-width: 768px) {
+  .mainLayout main {
+    padding-left: 70px;
+  }
 }
