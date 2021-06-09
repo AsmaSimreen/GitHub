@@ -7,19 +7,35 @@ import Loading from "../images/loading.gif";
 export default class Dashboard extends Component {
   state = {
     query: "",
+    users: null,
+    loading: true,
   };
 
+  componentDidMount() {
+    const getUsers = async () => {
+      try {
+        const res = await axios.get("https://api.github.com/users");
+        this.setState({ users: res.data, loading: false });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getUsers();
+  }
+  componentWillUnmount() {
+    this.setState({ users: null });
+  }
   handleSearch = async (ev) => {
     // implementation of handleSearch using
     // https://api.github.com/search/users?q=pranis
     ev.preventDefault();
     try {
-      this.props.setLoading(true);
+      this.setState({ loading: true });
       const res = await axios.get(
         `https://api.github.com/search/users?q=${this.state.query}`
       );
-      this.props.handleUserSearch(res.data.items);
-      this.props.setLoading(false);
+
+      this.setState({ users: res.data.items, loading: false });
     } catch {
       console.log("Something went wrong");
     }
@@ -42,10 +58,10 @@ export default class Dashboard extends Component {
           </form>
         </div>
         <div className="dashboardContainer">
-          {this.props.loading ? (
+          {this.state.loading ? (
             <img className="loadingImage" src={Loading} alt="Loading" />
           ) : (
-            this.props.users
+            this.state.users
               ?.filter((user) => {
                 return user.login.startsWith(this.state.query);
               })
@@ -64,4 +80,4 @@ export default class Dashboard extends Component {
     );
   }
 }
-Dashboard.propTypes = { users: PropTypes.object.isRequired };
+// Dashboard.propTypes = { users: PropTypes.object.isRequired };

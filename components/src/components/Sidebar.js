@@ -6,12 +6,23 @@ export default function Sidebar() {
     <div className="sideBar">
       <ul>
         <li>
-          <Link to="/">Dashboard</Link>
+          <Link to="/">
+            <i className="fab fa-500px"></i>
+            <span className="link_name">Dashboard</span>
+          </Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/about">
+            <i className="fas fa-address-card"></i>
+            <span className="link_name">About</span>
+          </Link>
         </li>
-        <li>Contact</li>
+        <li>
+          <Link to="/about">
+            <i className="fas fa-hands-helping"></i>
+            <span className="link_name">Contact</span>
+          </Link>
+        </li>
       </ul>
     </div>
   );

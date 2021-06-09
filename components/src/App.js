@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import axios from "axios";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Layout from "./components/layout/Layout";
