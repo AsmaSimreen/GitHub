@@ -1,17 +1,17 @@
 import React from 'react'
 import PropTypes from "prop-types"
-export default function RepoItem() {
+export default function RepoItem(props) {
     return (
         <div className="repoItem">
             <h3>{props.repoName}</h3>
-            <h2>
+            <p>
                 <a href={props.link}>{props.fullName}</a>
-            </h2>
+            </p>
         </div>
-    )
+    );
 }
 RepoItem.propTypes = {
     link: PropTypes.string.isRequired,
     repoName: PropTypes.string.isRequired,
     fullname: PropTypes.string.isRequired,
-}
+};

@@ -18,7 +18,7 @@ export default function Sidebar() {
           </Link>
         </li>
         <li>
-          <Link to="/about">
+          <Link to="/contact">
             <i className="fas fa-hands-helping"></i>
             <span className="link_name">Contact</span>
           </Link>

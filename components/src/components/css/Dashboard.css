@@ -1,5 +1,6 @@
 form {
   text-align: center;
+  margin-top: 20px;
 }
 .searchBar .search_input {
   padding: 8px;
@@ -12,4 +13,9 @@ form {
 .loadingImage {
   display: block;
   margin: 0 auto;
+}
+@media screen and (max-width:768px){
+.searchBar .search_input{
+  width: 200px;
+}
 }
