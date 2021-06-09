@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
+import About from "./components/About";
+import Contact from "./components/Contact";
 import Layout from "./components/layout/Layout";
 import Dashboard from "./components/Dashboard";
+import User from "./components/User";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 export default class App extends Component {
   state = {
@@ -50,10 +53,10 @@ export default class App extends Component {
               />
               <Route
                 exact
-                path="/user/:id"
+                path="/user/:username"
                 render={(props) => {
                   console.log(props);
-                  return <h1>Hello world {props.match.params.id}</h1>;
+                  return <User params={props.match.params.id} />;
                 }}
               ></Route>
               <Route exact path="/about" component={About}></Route>
@@ -71,14 +74,4 @@ export default class App extends Component {
       </Router>
     );
   }
-}
-
-function Home() {
-  return "Home page";
-}
-function About() {
-  return "About page";
-}
-function Contact() {
-  return "Contact Page";
 }
