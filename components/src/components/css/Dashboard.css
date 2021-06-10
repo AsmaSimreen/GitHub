@@ -14,6 +14,9 @@ form {
   display: block;
   margin: 0 auto;
 }
+.input_error{
+  border: 2px solid red !important;
+}
 
 @media screen and (max-width: 768px) {
   .searchBar .search_input {

@@ -29,6 +29,13 @@ export default class Dashboard extends Component {
     // https://api.github.com/search/users?q=pranis
     ev.preventDefault();
     try {
+      if (this.state.query === "") {
+        this.setState({ error: true });
+        setTimeout(() => {
+          this.setState({ error: false });
+        })
+        return;
+      }
       this.setState({ loading: true });
       const res = await axios.get(
         `https://api.github.com/search/users?q=${this.state.query}`
@@ -46,6 +53,9 @@ export default class Dashboard extends Component {
         <div className="searchBar">
           <form onSubmit={this.handleSearch}>
             <input
+              className={
+                this.state.error ? "search_input input_error" : "search_input"
+              }
               value={this.state.query}
               onChange={(ev) => {
                 this.setState({ query: ev.target.value });
